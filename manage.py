@@ -20,3 +20,11 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
+#When to Run Migrations:
+    # 1. Create a new model
+    # 2. Add, remove, or change fields in an existing model
+    # 3. Change options that affect the database schema, such as unique, db_index, etc.
+    # -- In other words, we run Migrations ONLY after an action that modifies or has to do with our Database --> Other types of corrections or updates to the code DOES NOT need a Migration

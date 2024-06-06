@@ -21,5 +21,8 @@ from django.conf.urls import include
 urlpatterns = [
     
     path('', include('contacts_api.urls')),
+    path('', include('companies_api.urls')),
+    path('', include('locations_api.urls')),
+
     path('admin/', admin.site.urls),
 ]

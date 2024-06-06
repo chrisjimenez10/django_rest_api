@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-um62^ezw099r%=#-hybhjrt1^e03_s*bn!@xt@fu04%m=q15m&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '3.17.166.207']
+#This is giving permission to HOSTS - The first element in the list here is our EC2 Instance Public IPv4 address (Hosting our online public deployed version of our project) and the second element is our localhost (NOTE: If we use the actual string 'localhost' it does not work, so we need to type the number version of our localhost URL --> Only way to successfuly run server locally after adding our EC2 address)
+ALLOWED_HOSTS = [
+    '3.17.166.207', 
+    '127.0.0.1'
+    ]
 
 
 # Application definition
@@ -34,6 +38,8 @@ ALLOWED_HOSTS = ['localhost', '3.17.166.207']
 INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
+    'companies_api',
+    'locations_api',
     'contacts_api',
     'django.contrib.admin',
     'django.contrib.auth',

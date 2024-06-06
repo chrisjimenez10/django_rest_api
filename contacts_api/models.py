@@ -9,3 +9,6 @@ class Contact(models.Model):
     name = models.CharField(max_length=32)
     age = models.IntegerField()
     date_created = models.DateTimeField(default=timezone.now)
+
+# class Companies(models.Model):
+#     name = models.CharField(max_length=32)
