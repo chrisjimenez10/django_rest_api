@@ -46,8 +46,8 @@ const App = () => {
   return (
 
     <main>
-
       <div className="left-cell">
+        
         <button onClick={handleRenderCompanies}>Companies</button>
         {renderCompany === "companies" && (
             <Companies />

@@ -70,6 +70,16 @@ const Contacts = () => {
   return (
 
     <>
+
+      <button onClick={handleRenderForm}>Form</button>
+      {renderForm === "showForm" && (
+        <Form 
+        handleCreateContact={handleCreateContact}
+        contactToEdit={contactToEdit}
+        setContactToEdit={setContactToEdit}
+        handleEditContact={handleEditContact}
+      />)}
+
       <h3 style={{textDecoration: "underline"}}>Contacts</h3>
       <ol>
       {contacts.map((contact)=>{
@@ -83,15 +93,7 @@ const Contacts = () => {
           )
       })}
       </ol>
-
-      <button onClick={handleRenderForm}>Form</button>
-      {renderForm === "showForm" && (
-        <Form 
-        handleCreateContact={handleCreateContact}
-        contactToEdit={contactToEdit}
-        setContactToEdit={setContactToEdit}
-        handleEditContact={handleEditContact}
-      />)}
+      
     </>
 
   )
