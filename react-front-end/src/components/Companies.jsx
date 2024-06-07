@@ -9,6 +9,7 @@ const Companies = () => {
 
     //State
     const [companies, setCompanies] = useState([]);
+    
 
     //Functions
     const fetchCompaniesDatabase = async () => {
@@ -28,19 +29,19 @@ const Companies = () => {
 
   return (
 
-    <>
-        <h3 style={{textDecoration: "underline"}}>Companies</h3>
-        <ol>
-        {companies.map((company)=>{
-            return(
-                <li key={company.id}>
-                <h4>{company.name}</h4>
-                <h4><span style={{color: "blue"}}>Industry: </span>{company.industry}</h4>
-                </li>
-            )
-        })}
-        </ol>
-      </>
+    <>          
+      <h3 style={{textDecoration: "underline"}}>Companies</h3>
+      <ol>
+      {companies.map((company)=>{
+          return(
+              <li key={company.id}>
+              <h4>{company.name}</h4>
+              <h4><span style={{color: "blue"}}>Industry: </span>{company.industry}</h4>
+              </li>
+          )
+      })}
+      </ol>
+    </>
 
   )
 }
