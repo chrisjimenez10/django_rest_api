@@ -33,6 +33,17 @@ const Locations = () => {
             return(
                 <li key={location.id}>
                 <h4><span style={{color: "green"}}>Address: </span>{location.street}, {location.city}, {location.state}</h4>
+                <h5>- Companies:</h5>
+                <ul>                  
+                  {location.companies.map((company)=>{
+                    return(
+                    <li key={company.id}>
+                      <h5>{company.name}</h5>
+                      <h5><span style={{color: "blue"}}>Industry: </span>{company.industry}</h5>                     
+                    </li>
+                    )
+                  })}
+                </ul>
                 </li>
             )
         })}
