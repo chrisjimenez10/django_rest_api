@@ -9,6 +9,8 @@ class Contact(models.Model):
         #We can set default values when creating the Class and we can also assign the range of characters for the CharField() for string datatypes (CharField() = VARCHAR())
     name = models.CharField(max_length=32)
     age = models.IntegerField()
+
+    # Here, we are assigning a ForeignKey to the Location model ON this Model's "home" field/column --> This creates a REFERENCE and a relationship between the two Models (Contact and Locations)
     home = models.ForeignKey(Location, on_delete=models.CASCADE)
     date_created = models.DateTimeField(default=timezone.now)
 
