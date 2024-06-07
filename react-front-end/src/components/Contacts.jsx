@@ -86,7 +86,8 @@ const Contacts = () => {
           return(
               <li key={contact.id}>
                 <h4>{contact.name}</h4>
-                <h4 style={{color: "red"}}>Age: {contact.age}</h4>
+                <h4>Age: {contact.age}</h4>
+                <h4><span style={{color: "red"}}>Address: </span>{contact.home.street}, {contact.home.city}, {contact.home.state}</h4>
                 <button onClick={()=> handleEdit(contact)}>Edit</button>
                 <button onClick={()=> handleDeleteContact(contact.id)}>Delete</button>
               </li>
