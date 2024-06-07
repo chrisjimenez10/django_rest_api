@@ -3,36 +3,43 @@ import { useState } from "react";
 import "./App.css";
 import Companies from "./components/Companies";
 import Locations from "./components/Locations";
+import Contacts from "./components/Contacts";
 
 //Parent Component
 const App = () => {
 
   //State
   const [renderCompany, setRenderCompany] = useState("");
-  const [renderLocation, setRenderLocation] = useState("")
+  const [renderLocation, setRenderLocation] = useState("");
+  const [renderContact, setRenderContact] = useState("");
 
 
   //Functions
   const handleRenderCompanies = () => {
     if(renderCompany === ""){
-      setRenderCompany("companies")
+      setRenderCompany("companies");
     }
     if(renderCompany === "companies"){
-      setRenderCompany("")
+      setRenderCompany("");
     }
   };
 
   const handleRenderLocations = () => {
     if(renderLocation === ""){
-      setRenderLocation("locations")
+      setRenderLocation("locations");
     }
     if(renderLocation === "locations"){
-      setRenderLocation("")
+      setRenderLocation("");
     }
   };
 
   const handleRenderContacts = () => {
-
+    if(renderContact === ""){
+      setRenderContact("contacts");
+    }
+    if(renderContact === "contacts"){
+      setRenderContact("");
+    }
   };
 
 
@@ -40,18 +47,26 @@ const App = () => {
 
     <main>
 
-      <button onClick={handleRenderCompanies}>Companies</button>
-      {renderCompany === "companies" && (
-          <Companies />
-      )}
+      <div className="left-cell">
+        <button onClick={handleRenderCompanies}>Companies</button>
+        {renderCompany === "companies" && (
+            <Companies />
+        )}
+      </div>
 
-      <button onClick={handleRenderLocations}>Locations</button>
-      {renderLocation === "locations" && (
-        <Locations />
-      )}
+      <div className="middle-cell">
+        <button onClick={handleRenderLocations}>Locations</button>
+        {renderLocation === "locations" && (
+          <Locations />
+        )}
+      </div>
 
-      <button onClick={handleRenderContacts}>Contacts</button>
-      
+      <div className="right-cell">
+        <button onClick={handleRenderContacts}>Contacts</button>
+        {renderContact === "contacts" && (
+          <Contacts />
+        )}
+      </div>
       
 
     </main>
