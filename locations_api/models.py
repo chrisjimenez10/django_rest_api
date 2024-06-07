@@ -1,10 +1,15 @@
 from django.db import models
+from companies_api.models import Company
+
 
 # Create your models here.
 class Location(models.Model):
     street = models.CharField(max_length=50)
     city = models.CharField(max_length=32)
     state = models.CharField(max_length=2)
+
+    # Here, we are dealing with a Many-to-Many Relationship, where we want to have a LIST of different companies be in the "companies" field/column of the Location model/table --> In other words, these companies share the same location, so it will be a List (If we have a List, then we have a Many-To-Many Relationship and we need to update our Django code)
+    companies = models.ManyToManyField(Company, related_name='locations')
 
     #The __str__(self) function is a special method that we define in our model class to return a string representation of the model instance --> This string representation is used in various places, such as the Django admin interface and in the Django shell when you query model instances
         #Purpose:
